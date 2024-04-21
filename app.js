@@ -117,17 +117,151 @@ console.log(getMax([5, 100, 0]))
 console.log(getMax([12, 10, -20]))
 console.log(getMax([-300, -100, -200]))
 
+
 /* Question 8 Reverse a String
 Given a string, return the reversed string
-    -use an incrementing for loop
-    -use a decrementing for loop
-    -use the array reverse property
+    1.use an incrementing for loop
+    2.use a decrementing for loop
+    3.use the array reverse property
 */
 
+/*function reverseString(string) {
+    let reversedString = ''
+     for(let i=0; i < string.length; i++) {
+        //This is how you loop through ever character in a string
+        // console.log(string[i])
+        reversedString = string[i] + reversedString
+     }
+     return reversedString
+}
+//increment ^^^ */
+
+/*function reverseString(string) {
+    let reversedString = ''
+    for (let i = string.length - 1; i >= 0; i--) {
+       reversedString += string[i]
+    }
+    return reversedString
+}
+//decrement */
+
+// **can only .reverse an array not a string 
+//convert a string into an array use .split('') with an empty string
+// .join('') with empty string converts array back to a string
 function reverseString(string) {
-     
+    return string.split('').reverse().join('')
 }
 
 console.log(reverseString('abc'))
 console.log(reverseString('David'))
 console.log(reverseString('This is cool'))
+// using reverse property
+
+
+/* Question 9 Turn ever element in an array into 0
+Given an array of elements, return the same length array filled with 0's
+    1.Solution: For loop
+    2.Solution: Array 'fill'
+    3.Solution: Array 'map' 
+*/
+
+// function convertToZeros(arr) {
+//     let zeroArray = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         zeroArray[i] = 0 
+//     }
+//     return zeroArray;
+// }
+//  Solution 1. For Loop
+
+
+// function convertToZeros(arr) {
+//     return new Array(arr.length).fill(0);
+// }
+// not commonly used method but will be using this method in future FES projects
+//     Solution 2. Array 'fill'
+
+
+function convertToZeros(arr) {
+    return arr.map(elem => 0) 
+}
+// Using .map method - .map method allows you to convert elements in array to something else
+
+console.log(convertToZeros([5, 100, 0]));
+console.log(convertToZeros([12]));
+console.log(convertToZeros([1, 2, 3,4, 5]));
+
+
+/* Question 10  - Filter out all the apples
+Given an array of fruits, if it is an apple remove it from the array.
+
+Solution 1: For loop
+Solution 2: Array ' filter'
+*/
+
+// function removeApples(arr) {
+//     let noApples = []
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] !== 'Apple'){
+//             noApples.push(arr[i])
+//         }
+//     }
+//     return noApples
+// }
+// // Solution 1 - For Loop
+
+
+function removeApples(arr) {
+    return arr.filter(elem => elem !== 'Apple')
+    /* return arr.filter(elem => {
+        return elem !== 'Apple' })*/
+}
+// .filter similar to .map and needs to be returned
+
+console.log(removeApples(['Banana', 'Apple', 'Orange', 'Apple']))
+console.log(removeApples(['Tomato', 'Orange', 'Banana']))
+console.log(removeApples(['Banana', 'Orange', 'Apple']))
+
+
+/* Question 11 - Filter out all the falsy values
+GIven an array of values, fliter out all the falsy values and only return the truthy values
+
+* Solution 1: For Loop
+* Solution 2: Array ' filter' */
+
+function filterOutFalsy(arr) {
+    let truthyArr = []
+    for (let i = 0; i < arr.length; i++) {
+        if (!!arr[i] === true) {
+            truthyArr.push(arr[i])
+        }
+    }
+    return truthyArr
+}
+// Solution 1 - For Loop
+
+// function filterOutFalsy(arr) {
+//     return arr.filter(elem => !!elem === true)
+// }
+// // Solution 2 - filter method
+
+console.log(filterOutFalsy(['', [], 0, null, undefined, '0']))
+console.log(filterOutFalsy(['Tomato', 'Orange', 'Banana', false]))
+console.log(filterOutFalsy(['Banana', 'Orange', 'Apple']))
+
+
+function filterOutFalsy(arr) {
+    let truthyArray = []
+    for (let i = 0; i < arr.length; i++) {
+        if (!!arr[i] === true) {
+            truthyArray.push(arr[i])
+        }
+    }
+    return truthyArray
+}
+
+console.log(filterOutFalsy(['Banana', 0, null, undefined, 1, 'f', false]))
+
+function filterOutFalsy(arr) {
+    return 
+}
