@@ -245,23 +245,35 @@ function filterOutFalsy(arr) {
 // }
 // // Solution 2 - filter method
 
-console.log(filterOutFalsy(['', [], 0, null, undefined, '0']))
-console.log(filterOutFalsy(['Tomato', 'Orange', 'Banana', false]))
-console.log(filterOutFalsy(['Banana', 'Orange', 'Apple']))
+// console.log(filterOutFalsy(['', [], 0, null, undefined, '0']))
+// console.log(filterOutFalsy(['Tomato', 'Orange', 'Banana', false]))
+// console.log(filterOutFalsy(['Banana', 'Orange', 'Apple']))
+
+//MY OWN TAKE
+// function filterOutFalsy(arr) {
+//     let truthyArray = []
+//     for (let i = 0; i < arr.length; i++) {
+//         if (!!arr[i] === true) {
+//             truthyArray.push(arr[i])
+//         }
+//     }
+//     return truthyArray
+// }
+
+// console.log(filterOutFalsy(['Banana', 0, null, undefined, 1, 'f', false]))
+
+// function filterOutFalsy(arr) {
+//     return arr.filter(elem => !!elem === true)
+// }
+
+// console.log(filterOutFalsy(['Strawberries', 'Banana', 0, null, undefined, 1, 'f', false]))
 
 
-function filterOutFalsy(arr) {
-    let truthyArray = []
-    for (let i = 0; i < arr.length; i++) {
-        if (!!arr[i] === true) {
-            truthyArray.push(arr[i])
-        }
-    }
-    return truthyArray
+/* Question 12 - Truthy to true, Falsy to false
+Given an array of truthy and falsy values, return the same array of elements into its boolean value. */
+
+function convertToBoolean(arr) {
+    return arr.map(elem => !!elem)
 }
 
-console.log(filterOutFalsy(['Banana', 0, null, undefined, 1, 'f', false]))
-
-function filterOutFalsy(arr) {
-    return 
-}
+console.log(convertToBoolean([500, 0, 'David', '', []]))
